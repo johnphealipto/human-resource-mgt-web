@@ -1,6 +1,5 @@
 import React from 'react';
 import { Nav } from 'react-bootstrap';
-// import LoginImg from '../../img/call-center.jpg';
 import './FixedNavbar.css';
 
 const FixedNavbar = () => {

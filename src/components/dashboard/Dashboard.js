@@ -1,6 +1,5 @@
 import React from 'react';
-// import LoginImg from '../../img/call-center.jpg';
-import FixedNavbar from './fixedNavbar/FixedNavbar';
+import FixedNavbar from '../fixedNavbar/FixedNavbar';
 import './Dashboard.css';
 
 const DashboardPage = () => {

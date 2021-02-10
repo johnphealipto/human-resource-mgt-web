@@ -12,11 +12,12 @@
 }
 .staff-details {
   background-color: var(--light-hover-blue);
-  margin: 3vh 1.5vh;
-  padding-top: 1.5vh;
-  padding-bottom: .3vh;
-  padding-left: 1.5vh;
+  margin: 3vh 1.5vh 7.5vh 1.5vh;
+  padding: 1.5vh 0 .3vh 1.5vh;
   border-radius: 5px;
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.02), 
+              2px 2px 2px rgba(0,0,0,0.02),
+              4px 4px 4px rgba(0,0,0,0.02);
 }
 .staff-details p:nth-child(1) {
   font-weight: bold;
@@ -26,20 +27,22 @@
 .fixednavbar-wrapper nav {
   margin-top: 15vh;
 }
-i {
+.fixednavbar-wrapper i {
   color: var(--background-white-color);
 }
 a.nav-link {
   color: var(--background-white-color);
   padding: 2vh auto;
   margin-top: 2vh;
-  /* margin-left: 4vh; */
-  /* margin-right: 4vh; */
+  transition: all 0.15s ease-out;
+  -webkit-transition: all 0.15s ease-out;
 }
 a.nav-link:hover,
 a.nav-link:active,
 a.nav-link:focus {
   color: var(--background-white-color);
   background-color: var(--light-hover-blue);
-  /* border-radius: 10px; */
+  border-radius: 3px;
+  transition: all 0.15s ease-out;
+  -webkit-transition: all 0.15s ease-out;
 }
