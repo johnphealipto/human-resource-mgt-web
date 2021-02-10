@@ -14,19 +14,19 @@ const LoginPage = () => {
               <img src={LoginImg}/>
             </div>
           </Col>
-          <Col className='form-col'> 
+          <Col className='loginform-col'> 
             <div className='logo'>
               <img src={Logo}/>
             </div>
             <Form>
               <Form.Group className='form-group email' controlId="formBasicEmail">
-              <i class="fas fa-user pr-3"></i>
+                <i class="fas fa-user pr-3"></i>
                 <Form.Label className='login-label'>Email address</Form.Label>
                 <Form.Control autoFocus type="email" placeholder="Enter email" />
               </Form.Group>
 
               <Form.Group className='form-group password' controlId="formBasicPassword">
-              <i class="fas fa-unlock pr-3"></i>
+                <i class="fas fa-unlock pr-3"></i>
                 <Form.Label className='login-label'>Password</Form.Label>
                 <Form.Control type="password" placeholder="Password" />
               </Form.Group>

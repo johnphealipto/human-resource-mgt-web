@@ -29,7 +29,7 @@
 form {
   margin-left: 16vh;
 }
-.form-col i {
+.loginform-col i {
   color: var(--background-blue-color);
 }
 .login-label {
@@ -43,13 +43,13 @@ form {
 .form-group.password {
   margin-top: 3vh;
 }
-input[type='email'],
-input[type='password'] {
+.loginpage-wrapper input[type='email'],
+.loginpage-wrapper input[type='password'] {
   margin-top: 5px;
   background-color: var(--input-field-color);
 }
-input[type="email"]:focus, 
-input[type="password"]:focus {   
+.loginpage-wrapper input[type="email"]:focus, 
+.loginpage-wrapper input[type="password"]:focus {   
   background-color: var(--input-field-color);
   border-color: var(--background-blue-color);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 2px var(--unique-blue-color);

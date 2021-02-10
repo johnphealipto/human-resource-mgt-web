@@ -30,16 +30,16 @@
 .fixednavbar-wrapper i {
   color: var(--background-white-color);
 }
-a.nav-link {
+.fixednavbar-wrapper a.nav-link {
   color: var(--background-white-color);
-  padding: 2vh auto;
+  padding: 1vh 0 1vh 1.8vh;
   margin-top: 2vh;
   transition: all 0.15s ease-out;
   -webkit-transition: all 0.15s ease-out;
 }
-a.nav-link:hover,
-a.nav-link:active,
-a.nav-link:focus {
+.fixednavbar-wrapper a.nav-link:hover,
+.fixednavbar-wrapper a.nav-link:active,
+.fixednavbar-wrapper a.nav-link:focus {
   color: var(--background-white-color);
   background-color: var(--light-hover-blue);
   border-radius: 3px;
