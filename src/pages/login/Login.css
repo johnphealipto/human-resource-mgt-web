@@ -7,40 +7,43 @@
 .loginpage-container {
   margin: auto;
 }
-.login-img {
+.loginpage-wrapper .login-img {
+  background-color: var(--background-blue-color);
   width: 100vh;
   height: 100vh;
-  margin-left: -20vh;
+  margin-left: -30vh;
   overflow: hidden;
 }
-.login-img img {
+.loginpage-wrapper .login-img img {
   width: 150%;
+  opacity: 0.8;
+  background: contain;
 }
-.logo {
+.loginpage-wrapper .logo {
   margin-top: 55vh;
   width: 35vh;
   margin: auto;
   padding-bottom: 8vh;
 }
-.logo img {
+.loginpage-wrapper .logo img {
   margin-top: 23vh;
   width: 100%;
 }
-form {
+.loginpage-wrapper form {
   margin-left: 16vh;
 }
-.loginform-col i {
+.loginpage-wrapper .loginform-col i {
   color: var(--background-blue-color);
 }
-.login-label {
+.loginpage-wrapper .login-label {
   text-align: left;
   margin-bottom: -1vh;
 }
-.form-group.email,
-.form-group.password {
+.loginpage-wrapper .form-group.email,
+.loginpage-wrapper .form-group.password {
   width: 50vh;
 }
-.form-group.password {
+.loginpage-wrapper .form-group.password {
   margin-top: 3vh;
 }
 .loginpage-wrapper input[type='email'],
@@ -55,12 +58,12 @@ form {
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 2px var(--unique-blue-color);
   outline: 0 none;
 }
-button[type="submit"] {
+.loginpage-wrapper button[type="submit"] {
   background-color: var(--background-blue-color);
   margin-top: 2vh;
   width: 50vh;
 }
-button[type="submit"]:hover {
+.loginpage-wrapper button[type="submit"]:hover {
   background-color: var(--background-blue-color);
   box-shadow: 1px 1px 1px rgba(0,0,0,0.11), 
               2px 2px 2px rgba(0,0,0,0.11),

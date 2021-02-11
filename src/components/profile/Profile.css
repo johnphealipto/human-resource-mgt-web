@@ -2,17 +2,10 @@
   color: black;
   margin-bottom: 10vh;
 }
-.profile-wrapper h5 {
-  background-color: var(--background-blue-color);
-  color: var(--background-white-color);
-  margin-bottom: 2vh;
-  padding: 1vh;
-  border-radius: 5px;
-}
 .profile-wrapper form {
-  background-color: white;
   padding: 2vh;
-  padding-top: 3vh;
+  padding-top: 5vh;
+  margin-top: 5vh;
   border-radius: 5px;
   box-shadow: 1px 1px 1px rgba(0,0,0,0.05), 
               2px 2px 2px rgba(0,0,0,0.05),

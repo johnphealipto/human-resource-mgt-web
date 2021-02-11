@@ -6,7 +6,6 @@ import './Education.css';
 const Education = () => {
   return (
     <div className="education-wrapper">
-      <h5>Education</h5>
       <Form>
         <Form.Group as={Row} controlId="formPlaintextEmail">
           <Form.Label column sm="2">

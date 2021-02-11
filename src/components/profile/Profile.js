@@ -1,14 +1,13 @@
 import React from 'react';
 import { Form, Row, Col, Nav } from 'react-bootstrap';
-import { LinkContainer } from 'react-router-bootstrap'
+import { LinkContainer } from 'react-router-bootstrap';
 import './Profile.css';
 
 const Profile = () => {
   return (
     <div className="profile-wrapper">
-      <h5>My Profile</h5>
       <Form>
-        <Form.Group as={Row} controlId="formPlaintextEmail">
+        <Form.Group as={Row}>
           <Form.Label column sm="2">
             Name
           </Form.Label>
@@ -20,7 +19,7 @@ const Profile = () => {
           </Col>
         </Form.Group>
 
-        <Form.Group as={Row} controlId="formPlaintextEmail">
+        <Form.Group as={Row}>
           <Form.Label column sm="2">
             Staff ID
           </Form.Label>
@@ -29,7 +28,7 @@ const Profile = () => {
           </Col>
         </Form.Group>
 
-        <Form.Group as={Row} controlId="formPlaintextEmail">
+        <Form.Group as={Row}>
           <Form.Label column sm="2">
             Email
           </Form.Label>
@@ -38,7 +37,7 @@ const Profile = () => {
           </Col>
         </Form.Group>
 
-        <Form.Group as={Row} controlId="formPlaintextPassword">
+        <Form.Group as={Row}>
           <Form.Label column sm="2">
             Department
           </Form.Label>

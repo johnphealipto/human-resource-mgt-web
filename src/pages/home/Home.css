@@ -1,0 +1,16 @@
+.homepage-wrapper {
+  overflow-x: hidden;
+}
+.homepage-wrapper .homepage-col h4 {
+  font-weight: 500; 
+  letter-spacing: 1px;
+  margin-bottom: 7vh;
+}
+.homepage-wrapper .homepage-details p:nth-child(1) {
+  color: var(--theme-orange-color);
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+.homepage-wrapper .homepage-details p:nth-child(2) {
+  margin-top: -3vh;
+}
