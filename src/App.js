@@ -2,7 +2,6 @@ import React from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import './App.css';
 import LoginScreen from './screens/LoginScreen';
-import Header from './components/Header';
 import DashboardScreen from './screens/DashboardScreen';
 import PasswordScreen from './screens/PasswordScreen';
 import StaffListScreen from './screens/StaffListScreen';
@@ -22,7 +21,6 @@ import MyLeaveApplicationScreen from './screens/MyLeaveApplicationScreen';
 function App() {
   return (
     <Router>
-      {/* <Header /> */}
     <main className="">
       <Route path='/home' component={HomeScreen} />
       <Route path='/profile' component={ProfileScreen} />

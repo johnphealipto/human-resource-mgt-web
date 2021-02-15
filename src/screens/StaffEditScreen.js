@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import { Form, Button, Row, Col, ListGroup } from 'react-bootstrap'
+import { Link, NavLink } from 'react-router-dom'
+import { Form, Button, Row, Col, Nav } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import Message from '../components/Message'
-
 import { getUserDetailsById, updateUser } from '../actions/userActions'
 import { USER_DETAILS_ID_RESET, USER_UPDATE_RESET } from '../constants/userConstants'
+import '../styles/FixedNavbar.css';
+import Header from '../components/Header';
+import '../styles/ProfileScreen.css';
+
 
 const StaffEditScreen = ({ history, match }) => {
     const userId = match.params.id
@@ -81,40 +84,41 @@ const StaffEditScreen = ({ history, match }) => {
     return (
         <>
             {user.employee  && (
-            <Row className='ml-4 mr-4 py-4'>
-            <Col md={4}>
-            <ListGroup>
-                <ListGroup.Item variant="success">
-                    <Link to='/admin/userlist'>
-                        <strong><i className='fas fa-users'></i> All Employees</strong>
-                    </Link>
-                </ListGroup.Item>
-                <ListGroup.Item variant="success">
-                    <Link to={`/admin/user/${user.employee._id}/edit`}>
-                        <strong><i className='fas fa-user'></i>  Details</strong>
-                    </Link>
-                </ListGroup.Item>
-                <ListGroup.Item variant="success">
-                    <Link to={`/admin/profile/${user.employee._id}/edit`}>
-                        <strong><i className='fas fa-user'></i>  Profile</strong>
-                    </Link>
-                </ListGroup.Item>
-                <ListGroup.Item variant="success">
-                    <Link to={`/admin/education/${user.employee._id}/edit`}>
-                        <strong><i className='fas fa-school'></i>  Education</strong>
-                    </Link>
-                </ListGroup.Item>
-                <ListGroup.Item variant="success">
-                    <Link to={`/admin/nextofkin/${user.employee._id}/edit`}>
-                        <strong><i className='fas fa-user'></i> Employee Next Of Kin</strong>
-                    </Link>
-                </ListGroup.Item>
-                
-            </ListGroup>
+            <Row className='ml-4 mr-4 py-4 profilescreen-wrapper'>
+            <Col md={3}>
+            <div className="fixednavbar-wrapper">
+            <div className='employee-details'>
+                <p>{userInfo.role}</p>
+                <p>{userInfo.email}</p>
+            </div>
+        <Nav className="flex-column">
+        <NavLink to='/admin/userlist' exact className="nav-link" activeClassName='active-here'>
+          <i class="fas fa-home pr-3"></i>
+          All Employees
+        </NavLink>
+        <NavLink to={`/admin/user/${userId}/edit`} exact className="nav-link" activeClassName='active-here'>
+          <i class="far fa-id-card pr-3"></i>
+          Details
+        </NavLink>
+        <NavLink to={`/admin/profile/${userId}/edit`} exact className="nav-link" activeClassName='active-here'>
+          <i class="fas fa-user-circle pr-3"></i>
+          Profile
+        </NavLink>
+        <NavLink to={`/admin/education/${userId}/edit`} exact className="nav-link" activeClassName='active-here'>
+          <i class="fas fa-user-friends pr-3"></i>
+          Education
+        </NavLink>
+        <NavLink to={`/admin/nextofkin/${userId}/edit`} exact className="nav-link" activeClassName='active-here'>
+          <i class="fas fa-graduation-cap pr-3"></i>
+          Employee Next Of Kin
+        </NavLink>
+        </Nav>
+        </div>
             </Col>
            
             <Col md={8}>
-                <h1>Update {user.employee.firstname}'s Record</h1>
+                <Header />
+                <h1 className='page-header'>Update {user.employee.firstname}'s Record</h1>
                
                 {error && <Message variant='danger'>{error}</Message>}
                 {successUpdate && <Message variant='success'>Profile Created</Message>}

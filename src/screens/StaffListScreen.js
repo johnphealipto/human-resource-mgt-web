@@ -95,7 +95,7 @@ const StaffListScreen = ({ history, match }) => {
                                         <i className='fas fa-times' style={{  color: 'red' }}></i>
                                     )}
                                 </td>
-                                {userInfo && (userInfo.role === 'hr') && (
+                                {userInfo && (userInfo.role === 'hr' || userInfo.role === 'hr-manager' || userInfo.role === 'admin') && (
                                 <td>
                                     <LinkContainer to={`/admin/user/${user._id}/edit`}>
                                         <Button variant='light' className='btn-sm'>

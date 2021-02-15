@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import { Form, Button, Row, Col, ListGroup } from 'react-bootstrap'
+import { Link, NavLink } from 'react-router-dom'
+import { Form, Button, Row, Col, ListGroup, Nav } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
 import { getUserDetailsById, updateUser } from '../actions/userActions'
-import { USER_DETAILS_ID_RESET, USER_UPDATE_RESET } from '../constants/userConstants'
+import { USER_DETAILS_ID_RESET, USER_UPDATE_RESET } from '../constants/userConstants';
+import '../styles/FixedNavbar.css';
+import Header from '../components/Header';
+import '../styles/ProfileScreen.css';
+
 
 const RoleEditScreen = ({ history, match }) => {
     const userId = match.params.id
@@ -73,63 +77,61 @@ const RoleEditScreen = ({ history, match }) => {
     return (
         <>
             {user.employee && (
-            <Row className='ml-4 mr-4 py-4'>
-            <Col md={4}>
-            <ListGroup>
-                <ListGroup.Item variant="info">
-                    <Link to='/home'>
-                        <strong><i className='fas fa-user'></i> Home</strong>
-                    </Link>
-                </ListGroup.Item>
-                <ListGroup.Item variant="info">
-                    <Link to='/dashboard'>
-                        <strong><i className='fas fa-user'></i> Personal Details</strong>
-                    </Link>
-                </ListGroup.Item>
-                <ListGroup.Item variant="info">
-                    <Link to='/updatepassword'>
-                        <strong><i className='fas fa-user'></i> Update Password</strong>
-                    </Link>
-                </ListGroup.Item>
-                <ListGroup.Item variant="info">
-                    <Link to='/dashboard'>
-                        <strong><i className='fas fa-school'></i> Education</strong>
-                    </Link>
-                </ListGroup.Item>
-                <ListGroup.Item variant="info">
-                    <Link to='/myleave'>
-                        <strong><i className='fas fa-building'></i> My Leave Application</strong>
-                    </Link>
-                </ListGroup.Item>
+            <Row className='ml-4 mr-4 py-4 profilescreen-wrapper'>
+            <Col md={3}>
+            <div className="fixednavbar-wrapper">
+      <div className='employee-details'>
+        <p>{userInfo.role}</p>
+        <p>{userInfo.email}</p>
+      </div>
+            <Nav className="flex-column">
+            <NavLink to='/home' exact className="nav-link" activeClassName='active-here'>
+          <i class="fas fa-home pr-4"></i>
+          Home
+        </NavLink>
+        <NavLink to='/dashboard' exact className="nav-link" activeClassName='active-here'>
+          <i class="far fa-id-card pr-4"></i>
+          Personal details
+        </NavLink>
+        <NavLink to='/updatepassword' exact className="nav-link" activeClassName='active-here'>
+        <i class="fas fa-unlock pr-4"></i>
+          Update Password
+        </NavLink>
+        <NavLink to='/dashboard' exact className="nav-link" activeClassName='active-here'>
+          <i class="fas fa-graduation-cap pr-4"></i>
+          Education
+        </NavLink>
+        <NavLink to='/myleave' exact className="nav-link" activeClassName='active-here'>
+          <i class="fas fa-sign-out-alt pr-4"></i>
+          My Leave
+        </NavLink>
                 {
                     (userInfo.role === 'hr') && (
                         <>
-                        <ListGroup.Item variant="primary">
-                            <strong>ADMIN SECTION</strong>
-                            
-                        </ListGroup.Item>
-                        <ListGroup.Item variant="info">
-                            <Link to='/dashboard'>
-                                <strong><i className='fas fa-building'></i> All Leave Applications</strong>
-                            </Link>
-                        </ListGroup.Item>
-                        <ListGroup.Item variant="info">
-                            <Link to='/admin/userlist'>
-                                <strong><i className='fas fa-users'></i> All Employees</strong>
-                            </Link>
-                        </ListGroup.Item>
-                        <ListGroup.Item variant="info">
-                            <Link to='/admin/register'>
-                                <strong><i className='fas fa-users'></i> Register an Employee</strong>
-                            </Link>
-                        </ListGroup.Item>
+                        <div className='admin-section'>
+            <p>Admin Section</p>
+          </div>
+          <NavLink to='/myleave' exact className="nav-link" activeClassName='active-here'>
+            <i class="fas fa-box-open pr-4"></i>
+            Leave Applications
+          </NavLink>
+          <NavLink to='/admin/userlist' exact className="nav-link" activeClassName='active-here'>
+            <i class="fas fa-users pr-4"></i>
+            All Employees
+          </NavLink>
+          <NavLink to='/admin/register' exact className="nav-link" activeClassName='active-here'>
+            <i class="fas fa-user-plus pr-4"></i>
+            Register Employee
+          </NavLink>
                         </>
                     )
                 }
-            </ListGroup>
+            </Nav>
+            </div>
             </Col>
-            <Col md={6}>
-            <h1>Update {user.employee.email} Role</h1>
+            <Col md={8}>
+                <Header />
+                <h1 className='page-header'>Update {user.employee.email} Role</h1>
                 {message && <Message variant='danger'>{message}</Message>}
                 {error && <Message variant='danger'>{error}</Message>}
                 {successUpdate && <Message variant='success'>Profile Created</Message>}

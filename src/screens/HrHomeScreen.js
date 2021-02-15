@@ -3,8 +3,8 @@ import { LinkContainer } from 'react-router-bootstrap'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { Table, Button, Row, Col, ListGroup } from 'react-bootstrap'
-import { getUserDetailsById } from '../actions/userActions'
-
+import { getUserDetailsById } from '../actions/userActions';
+import FixedNavbar from '../components/FixedNavbar';
 
 
 const HrHomeScreen = ({ history, match }) => {
@@ -34,64 +34,8 @@ const HrHomeScreen = ({ history, match }) => {
         <>
             
         <Row className='ml-4 mr-4 py-4'>
-        <Col md={4}>
-        <ListGroup>
-            <ListGroup.Item variant="info">
-                <Link to='/home'>
-                    <strong><i className='fas fa-user'></i> Home</strong>
-                </Link>
-            </ListGroup.Item>
-            <ListGroup.Item variant="info">
-                <Link to='/dashboard'>
-                    <strong><i className='fas fa-user'></i> Personal Details</strong>
-                </Link>
-            </ListGroup.Item>
-            <ListGroup.Item variant="info">
-                <Link to='/profile'>
-                    <strong><i className='fas fa-user'></i> Profile</strong>
-                </Link>
-            </ListGroup.Item>
-            <ListGroup.Item variant="info">
-                <Link to='/nextofkin'>
-                    <strong><i className='fas fa-user'></i> Next Of Kin</strong>
-                </Link>
-            </ListGroup.Item>
-            <ListGroup.Item variant="info">
-                <Link to='/education'>
-                    <strong><i className='fas fa-school'></i> Education</strong>
-                </Link>
-            </ListGroup.Item>
-            <ListGroup.Item variant="info">
-                <Link to='/dashboard'>
-                    <strong><i className='fas fa-building'></i> My Leave Application</strong>
-                </Link>
-            </ListGroup.Item>
-            {
-                (userInfo.role === 'hr') && (
-                    <>
-                    <ListGroup.Item variant="primary">
-                        <strong>ADMIN SECTION</strong>
-                        
-                    </ListGroup.Item>
-                    <ListGroup.Item variant="info">
-                        <Link to='/dashboard'>
-                            <strong><i className='fas fa-building'></i> All Leave Applications</strong>
-                        </Link>
-                    </ListGroup.Item>
-                    <ListGroup.Item variant="info">
-                        <Link to='/admin/userlist'>
-                            <strong><i className='fas fa-users'></i> All Employees</strong>
-                        </Link>
-                    </ListGroup.Item>
-                    <ListGroup.Item variant="info">
-                        <Link to='/admin/register'>
-                            <strong><i className='fas fa-users'></i> Register an Employee</strong>
-                        </Link>
-                    </ListGroup.Item>
-                    </>
-                )
-            }
-        </ListGroup>
+        <Col md={3}>
+            <FixedNavbar />
         </Col>
         <Col md={8}>
         <Table striped bordered hover reesponsive className='table-sm mr-4 ml-3'>
