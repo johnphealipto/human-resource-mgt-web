@@ -15,7 +15,141 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+header {
+  background-color: ghostwhite;
+  margin-left: -10vh;
+  margin-top: -3vh;
+  /* padding: auto; */
+  position: fixed;
+  z-index: 5;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.05);
+}
+
+header .logout {
+  margin-left: 85vh;
+}
+.page-header {
+  margin-top: 18vh;
+}
+#logout-navbar-nav {
+  width: 10%;
+}
+#toggle-switch {
+  margin-left: 20px;
+  height: 50px;
+  /* margin-top: 20px; */
+  float: right;
+  /* padding-top: 20px; */
+  display: inline-block;
+  padding-top: 15px;
+}
+.navbar-right-content {
+  text-decoration: none;
+  color: black;
+  margin-right: 30px;
+  margin: 10px;
+}
+.navBar-username {
+  float: right;
+  margin-right: 30px;
+}
+#nav-bar-logo {
+  height: 40px;
+  margin-left: 10px;
+  margin-top: 5px;
+  padding: 0px;
+}
+#logo-anchor {
+  padding: 0px;
+  margin: 0px;
+  /* float: left; */
+}
+#logout-navbar-nav {
+  /* background-color: red; */
+  width: 10%;
+  background-color: white;
+  /* margin: 10px; */
+}
+#toggle-switch {
+  margin-left: 20px;
+  height: 50px;
+  /* margin-top: 20px; */
+  float: right;
+  /* padding-top: 20px; */
+  display: inline-block;
+  padding-top: 15px;
+}
+.navbar-right-content {
+  text-decoration: none;
+  color: black;
+  margin-right: 30px;
+  margin: 10px;
+}
+.navBar-username {
+  float: right;
+  margin-right: 30px;
+}
+
+#logo-img {
+  width: 100%;
+  margin: 10% auto 10%;
+}
+
+#logo-div {
+  width: 50%;
+  margin: 0 auto;
+}
+
+#title-div {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.login-form-input {
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 10px;
+  height: 40px;
+  margin: 10px 0 10px;
+  padding: 15px;
+  border: 1px;
+  background-color: #eef3ff;
+}
+
+.login-form-input:focus {
+  outline: 0;
+}
+
+#outer-login-form-div {
+  width: 90%;
+  margin: 0 auto;
+}
+.login-form-input[type="submit"] {
+  background-color: #395faf;
+  border-width: 0px;
+  margin-top: 15px;
+  padding: 0px;
+}
+
+.loading {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.title {
+  font-size: 20px;
+}
+
+.alert {
+  border-radius: 5px;
+  font-size: 14px;
+  text-align: center;
+  color: red;
+}
+
+@media (max-width: 300px) {
+  #main-outer-div {
+    width: 50%;
+    min-width: 0px;
+  }
 }
