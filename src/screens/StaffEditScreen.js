@@ -32,10 +32,9 @@ const StaffEditScreen = ({ history, match }) => {
     const { error, user } = userDetailsById
 
     useEffect(() => {
-        if (!userInfo  && (userInfo.role !== 'hr')) {
+        if (userInfo  && (userInfo.role === 'hr' || userInfo.role === 'hr-manager' || userInfo.role === 'admin')) {
             
-            history.push('/')
-        } else {
+           
             if(successUpdate) {
                 dispatch({
                     type: USER_UPDATE_RESET
@@ -58,6 +57,8 @@ const StaffEditScreen = ({ history, match }) => {
 
             }
         }
+        } else {
+            history.push('/')
         } 
         
     }, [history, userInfo, userId, user, successUpdate, dispatch])

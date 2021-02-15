@@ -36,9 +36,8 @@ const AdminNextOfKinScreen = ({ history, match }) => {
 
     useEffect(() => {
 
-        if(!userInfo) {
-            history.push('/')
-        } else {
+        if(userInfo  && (userInfo.role === 'hr' || userInfo.role === 'hr-manager' || userInfo.role === 'admin')) {
+            
             if(successUpdate || successCreate) {
                 dispatch({
                     type: NOK_UPDATE_RESET
@@ -62,6 +61,8 @@ const AdminNextOfKinScreen = ({ history, match }) => {
 
             }
         }
+        } else {
+            history.push('/')
     }
     }, [dispatch, history, nextOfKin, successUpdate, userId, successCreate, userInfo])
 

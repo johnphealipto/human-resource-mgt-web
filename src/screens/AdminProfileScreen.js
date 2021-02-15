@@ -44,9 +44,8 @@ const AdminProfileScreen = ({ history, match }) => {
 
     useEffect(() => {
 
-        if(!userInfo  && (userInfo.role !== 'hr')) {
-            history.push('/')
-        } else {
+        if(userInfo  && (userInfo.role === 'hr' || userInfo.role === 'hr-manager' || userInfo.role === 'admin')) {
+            
             if(successUpdate || successCreate) {
                 dispatch({
                     type: PROFILE_UPDATE_RESET
@@ -76,6 +75,8 @@ const AdminProfileScreen = ({ history, match }) => {
 
             }
         }
+        } else {
+            history.push('/') 
     }
     }, [dispatch, history, profile, userId, successUpdate, successCreate, userInfo])
 

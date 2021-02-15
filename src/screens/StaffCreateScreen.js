@@ -31,15 +31,16 @@ const StaffCreateScreen = ({ history }) => {
     const { loading, error, success:successRegister } = userRegister
 
     useEffect(() => {
-        if (!userInfo  && (userInfo.role !== 'hr')) {
-            history.push('/')
-        } else {
+        if (userInfo  && (userInfo.role === 'hr' || userInfo.role === 'hr-manager' || userInfo.role === 'admin')) {
+           
             if(successRegister) {
                 dispatch({
                     type: USER_REGISTER_RESET
                 })
                 history.push('/admin/userlist')
             }
+        } else {
+            history.push('/')
         }
         
     }, [dispatch, history, userInfo, successRegister])

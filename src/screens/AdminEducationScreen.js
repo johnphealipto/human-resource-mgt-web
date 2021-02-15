@@ -37,9 +37,8 @@ const AdminEducationScreen = ({ history, match }) => {
 
     useEffect(() => {
 
-        if(!userInfo) {
-            history.push('/')
-        } else {
+        if(userInfo  && (userInfo.role === 'hr' || userInfo.role === 'hr-manager' || userInfo.role === 'admin')) {
+            
             if(successUpdate || successCreate) {
                 dispatch({
                     type: EDUCATION_UPDATE_RESET
@@ -61,6 +60,8 @@ const AdminEducationScreen = ({ history, match }) => {
                 setYearOfGraduation(education.yearOfGraduation)
             }
         }
+        } else {
+            history.push('/')
     }
     }, [dispatch, history, education, userId, successCreate, successUpdate, userInfo])
 

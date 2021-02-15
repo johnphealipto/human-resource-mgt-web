@@ -24,7 +24,7 @@ const StaffListScreen = ({ history, match }) => {
     const {  userInfo } = userLogin
 
     useEffect(() => {
-        if (userInfo  && (userInfo.role === 'hr')) {
+        if (userInfo  && (userInfo.role === 'hr' || userInfo.role === 'hr-manager' || userInfo.role === 'admin')) {
             
             dispatch(listUsers(keyword, pageNumber))
         } else {
