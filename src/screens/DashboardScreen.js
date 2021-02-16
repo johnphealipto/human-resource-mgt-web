@@ -48,7 +48,7 @@ const DashboardScreen = ({ history }) => {
                })
                history.push('/')
            } else {
-            if(!user.firstname) {
+            if(!user || !user.firstname) {
                 dispatch(getUserDetails('me'))
             } else {
                 setFirstname(user.firstname)
@@ -96,7 +96,7 @@ const DashboardScreen = ({ history }) => {
                 {message && <Message variant='danger'>{message}</Message>}
                 {error && <Message variant='danger'>{error}</Message>}
                 {success && <Message variant='success'>Profile Updated</Message>}
-                {loading && <Loader />}
+              
                 <Form onSubmit={submitHandler}>
                     <Form.Row>
                         <Form.Group  as={Col} controlId='firstname'>
@@ -183,6 +183,7 @@ const DashboardScreen = ({ history }) => {
                         Update
                     </Button>
                 </Form>
+                
             </Col>
             
         </Row>
